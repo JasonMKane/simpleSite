@@ -1,0 +1,5 @@
+<template>
+  <ul repeat.for="nav of router.navigation">
+    <li class="${nav.isActive ? 'active' : ''}"><i class="fas fa-beer"></i><a href.bind="nav.href">${nav.title}</a></li>
+  </ul>
+</template>

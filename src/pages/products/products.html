@@ -1,0 +1,29 @@
+<template>
+  <div class="row">
+    <div class="col-m-3">
+      <div class="list-group">
+        <a repeat.for="product of productService.getAllProducts()" click.delegate="selectProduct(product.id)"
+          class="list-group-item list-group-item-action clickable">
+          <span><i class="fas fa-${product.icon}"></i>&nbsp;${product.name}</span>
+        </a>
+      </div>
+    </div>
+    <div if.bind="currentProduct" class="col-m-9">
+      <div class="card" style="width: 18rem;">
+        <div class="card-body">
+          <h5 class="card-title">
+            <span class="fa-stack fa-2x">
+              <i class="fas fa-square fa-stack-2x"></i>
+              <i class="fas fa-${currentProduct.icon} fa-stack-1x fa-inverse"></i>
+            </span>
+            ${currentProduct.name}</h5>
+          <!-- <h6 class="card-subtitle mb-2 text-muted">Card subtitle  </h6> -->
+          <p class="card-text">${currentProduct.description}
+          </p>
+          <!-- <a href="#" class="card-link">Card link</a>
+          <a href="#" class="card-link">Another link</a> -->
+        </div>
+      </div>
+    </div>
+  </div>
+</template>
