@@ -1,0 +1,13 @@
+<template>
+  Username: ${user.username}
+  <br />
+  <input type="text" placeholder="New Password, must be 278,000 random charactors" value.bind="password"
+    style="width:350px;" />
+  <br />
+  <input type="text" placeholder="Retype password!" style="width:350px;" value.bind="matchPw" />
+  <br />
+  <button class="btn btn-primary" click.delegate="resetPassword(password, matchPw)">Reset Password</button>
+  <div if.bind="pwstatemessage">
+    ${pwstatemessage}
+  </div>
+</template>
